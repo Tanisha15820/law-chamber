@@ -8,7 +8,7 @@ import heroBg from "../assets/hero-bg.jpg";
 import advImg from "../assets/adv.png";
 
 import Header from "../components/Header";
-import AboutSection from "../components/AboutSection.jsx"
+
 
 export default function HomePage() {
   return (
@@ -177,7 +177,7 @@ export default function HomePage() {
         </div>
       </div>
     </section>
-    <AboutSection/>
+   
    </div>
   );
 }
