@@ -1,4 +1,4 @@
-
+// src/components/ContactSection.jsx
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
@@ -64,7 +64,7 @@ export default function ContactSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] rounded-full bg-[#c79a47] blur-[120px]"
+        className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] rounded-full bg-secondary blur-[120px]"
       />
 
       {/* FLOATING ICON */}
@@ -80,7 +80,7 @@ export default function ContactSection() {
         }}
         className="absolute top-[8%] right-[5%] opacity-[0.05] hidden lg:block"
       >
-        <GavelOutlinedIcon className="!text-[220px] text-[#c79a47]" />
+        <GavelOutlinedIcon className="!text-[220px] text-secondary" />
       </motion.div>
 
       <div className="max-w-[1350px] mx-auto px-6 lg:px-10">
@@ -111,10 +111,10 @@ export default function ContactSection() {
                 repeat: Infinity,
               }}
             >
-              <GavelOutlinedIcon className="!text-[15px] text-[#c79a47]" />
+              <GavelOutlinedIcon className="!text-[15px] text-secondary" />
             </motion.div>
 
-            <p className="uppercase tracking-[2px] text-[#c79a47] text-[12px] font-semibold">
+            <p className="uppercase tracking-[2px] text-secondary text-[12px] font-semibold">
               Contact Us
             </p>
           </motion.div>
@@ -199,7 +199,7 @@ export default function ContactSection() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-[-80px] right-[-60px] w-[180px] h-[180px] rounded-full bg-[#c79a47] blur-[70px]"
+              className="absolute top-[-80px] right-[-60px] w-[180px] h-[180px] rounded-full bg-secondary blur-[70px]"
             />
 
             {/* IMAGE */}
@@ -246,7 +246,7 @@ export default function ContactSection() {
                       repeat: Infinity,
                     }}
                   >
-                    <CallOutlinedIcon className="text-[#c79a47] !text-[38px]" />
+                    <CallOutlinedIcon className="text-secondary !text-[38px]" />
                   </motion.div>
 
                   <div>
@@ -278,7 +278,7 @@ export default function ContactSection() {
                       repeat: Infinity,
                     }}
                   >
-                    <EmailOutlinedIcon className="text-[#c79a47] !text-[38px]" />
+                    <EmailOutlinedIcon className="text-secondary !text-[38px]" />
                   </motion.div>
 
                   <div>
@@ -311,7 +311,7 @@ export default function ContactSection() {
                     repeat: Infinity,
                   }}
                 >
-                  <NearMeOutlinedIcon className="text-[#c79a47] !text-[38px]" />
+                  <NearMeOutlinedIcon className="text-secondary !text-[38px]" />
                 </motion.div>
 
                 <div>
@@ -345,7 +345,7 @@ export default function ContactSection() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute top-[-40px] right-[-40px] w-[160px] h-[160px] bg-[#c79a47] z-0"
+              className="absolute top-[-40px] right-[-40px] w-[160px] h-[160px] bg-secondary z-0"
             />
 
             {/* DARK SHAPE */}
@@ -435,7 +435,7 @@ export default function ContactSection() {
                           outline-none
                           text-[15px]
                           placeholder:text-gray-400
-                          focus:border-[#c79a47]
+                          focus:border-secondary
                           transition-all
                         "
                       />
@@ -460,7 +460,7 @@ export default function ContactSection() {
                         resize-none
                         text-[15px]
                         placeholder:text-gray-400
-                        focus:border-[#c79a47]
+                        focus:border-secondary
                         transition-all
                       "
                     ></motion.textarea>
@@ -475,7 +475,7 @@ export default function ContactSection() {
                       type="submit"
                       disabled={loading}
                       className="
-                        bg-[#c79a47]
+                        bg-secondary
                         text-white
                         px-10
                         py-4
@@ -511,7 +511,7 @@ export default function ContactSection() {
                       }}
                       className="flex justify-center"
                     >
-                      <CheckCircleOutlinedIcon className="!text-[90px] text-[#c79a47]" />
+                      <CheckCircleOutlinedIcon className="!text-[90px] text-secondary" />
                     </motion.div>
 
                     <h3 className="text-[34px] font-heading font-bold text-[#111] mt-6">

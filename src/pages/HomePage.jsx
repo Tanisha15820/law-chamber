@@ -88,7 +88,6 @@ export default function HomePage() {
         <Header />
 
         {/* HERO CONTENT */}
-        {/* <div className="relative z-20 px-5 sm:px-6 md:px-14 pt-[170px] sm:pt-[190px] md:pt-[220px] lg:pt-[240px] pb-28 md:pb-40 min-h-screen flex items-start"> */}
         <div className="relative z-20 px-5 sm:px-6 md:px-14 pt-32 md:pt-36 pb-28 md:pb-40 min-h-screen flex items-center">
 
           {/* LEFT TEXT */}
