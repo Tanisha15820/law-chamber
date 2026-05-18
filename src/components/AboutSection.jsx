@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 
-import aboutMain from "../assets/about-main.jpg";
-import aboutSmall from "../assets/about-medium.jpg";
+import aboutMain from "../assets/about-top.jpeg";
+import aboutSmall from "../assets/about-mini.jpeg";
 
 export default function AboutSection() {
   return (
@@ -84,14 +84,14 @@ export default function AboutSection() {
           >
 
             {/* SMALL TITLE */}
-            <p className="text-primary text-[14px] font-medium uppercase tracking-[2px]">
+            <p className="text-secondary text-[14px] font-medium uppercase tracking-[2px]">
               About Our Firm
             </p>
 
             {/* HEADING */}
-            <h1 className="font-heading text-primary text-[42px] md:text-[76px] leading-[1.02] mt-4 font-bold max-w-[700px]">
+            <h1 className="font-heading text-primary text-[34px] sm:text-[42px] md:text-[60px] leading-[1.02] mt-4 font-bold max-w-[700px]">
               Committed to Justice{" "}
-              <span className="text-secondary">
+              <span className="text-secondarys">
                 Focused on Results.
               </span>
             </h1>

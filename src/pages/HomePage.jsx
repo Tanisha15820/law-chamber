@@ -7,10 +7,12 @@ import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import Groups2OutlinedIcon from "@mui/icons-material/Groups2Outlined";
 import PracticeAreas from "../components/PracticeAreas";
 import heroBg from "../assets/hero-bg.jpg";
-import advImg from "../assets/adv.png";
+import advImg from "../assets/hero-image.png";
 
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
+import AchievementSection from "../components/AchievementSection.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 
 export default function HomePage() {
   return (
@@ -185,6 +187,8 @@ export default function HomePage() {
       {/* ABOUT SECTION */}
       <AboutSection />
       <PracticeAreas/>
+      <AchievementSection/>
+      <Testimonials/>
     </div>
   );
 }
