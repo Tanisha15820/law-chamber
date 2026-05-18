@@ -60,3 +60,17 @@ h6 {
   background: var(--color-secondary);
   border-radius: 999px;
 }
+
+
+/* Swiper Navigation Arrows (Side Cards) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #d8b151 !important; /* your secondary color */
+}
+
+/* Optional: better visibility */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+  font-weight: 600;
+}
