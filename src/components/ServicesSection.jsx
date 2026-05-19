@@ -375,7 +375,6 @@
 
 // src/components/ServicesSection.jsx
 
-import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
@@ -440,9 +439,6 @@ export default function ServicesSection() {
       id="services"
       className="relative bg-[#f8f8f8] py-16 md:py-24 overflow-hidden font-body"
     >
-      {/* LIGHT BACKGROUND GLOW */}
-      <div className="absolute top-[10%] left-[-120px] w-[140px] h-[140px] rounded-full bg-secondary/10 blur-lg" />
-
       {/* STATIC ICON */}
       <div className="absolute top-[10%] right-[5%] hidden xl:block opacity-[0.03]">
         <GavelOutlinedIcon className="!text-[180px] text-secondary" />
@@ -451,13 +447,7 @@ export default function ServicesSection() {
       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 md:px-14 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-16 items-start">
           {/* LEFT SIDE */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="lg:sticky lg:top-28"
-          >
+          <div className="lg:sticky lg:top-28">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <GavelOutlinedIcon className="!text-[16px] text-secondary" />
 
@@ -466,31 +456,19 @@ export default function ServicesSection() {
               </p>
             </div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-[#111] font-bold leading-[1.05] text-[30px] sm:text-[48px] lg:text-[60px] font-heading"
-            >
+            <h2 className="text-[#111] font-bold leading-[1.05] text-[30px] sm:text-[48px] lg:text-[60px] font-heading">
               Legal Services
               <br />
               We Provide
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-[#555] text-[14px] sm:text-[16px] leading-7 sm:leading-8 mt-4 sm:mt-6 max-w-[360px] font-body"
-            >
+            <p className="text-[#555] text-[14px] sm:text-[16px] leading-7 sm:leading-8 mt-4 sm:mt-6 max-w-[360px] font-body">
               Our experienced legal team provides trusted legal solutions with
               professionalism, strategy, and dedication for every client.
-            </motion.p>
+            </p>
 
             {/* BUTTON */}
-            <motion.button
+            <button
               data-services-button="true"
               onClick={() => {
                 if (!showExtra) {
@@ -498,7 +476,7 @@ export default function ServicesSection() {
 
                   setTimeout(() => {
                     extraServicesRef.current?.scrollIntoView({
-                      behavior: "smooth",
+                      behavior: "auto",
                       block: "center",
                     });
                   }, 100);
@@ -506,16 +484,15 @@ export default function ServicesSection() {
                   setShowExtra(false);
                 }
               }}
-              whileTap={{ scale: 0.97 }}
-              className="mt-8 sm:mt-10 w-full sm:w-auto bg-secondary hover:bg-[#111] transition-all duration-300 text-white px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center sm:justify-start gap-3 text-[14px] sm:text-[15px] font-medium rounded-lg"
+              className="mt-8 sm:mt-10 w-full sm:w-auto bg-secondary text-white px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center sm:justify-start gap-3 text-[14px] sm:text-[15px] font-medium rounded-lg"
             >
               {showExtra ? "Hide Services" : "Explore More Services"}
 
               <span className="w-6 h-6 rounded-full bg-white text-[#111] flex items-center justify-center">
                 <ArrowForwardRoundedIcon className="!text-[16px]" />
               </span>
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
 
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
@@ -523,13 +500,10 @@ export default function ServicesSection() {
             {services.map((item, index) => (
               <div
                 key={index}
-                className={`bg-white border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all duration-300 overflow-hidden relative group rounded-2xl hover:-translate-y-1 will-change-transform ${
+                className={`bg-white border border-transparent overflow-hidden relative rounded-2xl shadow-md ${
                   index % 2 !== 0 ? "md:mt-20" : ""
                 }`}
               >
-                {/* LIGHT GLOW */}
-                <div className="absolute top-[-50px] right-[-30px] w-[90px] h-[90px] rounded-full bg-secondary/10 blur-lg" />
-
                 {/* TOP */}
                 <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
                   <div className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md">
@@ -544,13 +518,14 @@ export default function ServicesSection() {
                 </div>
 
                 {/* IMAGE */}
-                <div className="overflow-hidden h-[180px] sm:h-[220px]">
+                <div className="overflow-hidden h-[160px] sm:h-[190px]">
                   <img
                     src={item.img}
                     alt={item.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    fetchPriority="low"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
@@ -574,13 +549,10 @@ export default function ServicesSection() {
                 {extraServices.map((item, index) => (
                   <div
                     key={item.number}
-                    className={`bg-white border border-transparent hover:border-secondary/20 hover:shadow-lg transition-all duration-300 overflow-hidden relative group rounded-2xl hover:-translate-y-1 will-change-transform ${
+                    className={`bg-white border border-transparent overflow-hidden relative rounded-2xl shadow-md ${
                       index === 1 ? "md:mt-20" : ""
                     }`}
                   >
-                    {/* LIGHT GLOW */}
-                    <div className="absolute top-[-50px] right-[-30px] w-[90px] h-[90px] rounded-full bg-secondary/10 blur-lg" />
-
                     {/* TOP */}
                     <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
                       <div className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md">
@@ -595,13 +567,14 @@ export default function ServicesSection() {
                     </div>
 
                     {/* IMAGE */}
-                    <div className="overflow-hidden h-[180px] sm:h-[220px]">
+                    <div className="overflow-hidden h-[160px] sm:h-[190px]">
                       <img
                         src={item.img}
                         alt={item.title}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        fetchPriority="low"
+                        className="w-full h-full object-cover"
                       />
                     </div>
 

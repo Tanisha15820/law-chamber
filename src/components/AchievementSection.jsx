@@ -275,10 +275,8 @@
 
 // src/components/AchievementsSection.jsx
 
-import { motion } from "framer-motion";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -304,38 +302,38 @@ const achievements = [
   {
     title: "Additional Standing Counsel for South Delhi Municipal Corporation",
     image: ach1,
-    icon: <ShieldOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <ShieldOutlinedIcon className="!text-white !text-[20px]" />,
   },
   {
     title: "Panel Lawyer for East Delhi Municipal Corporation",
     image: ach2,
-    icon: <AccountBalanceOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <AccountBalanceOutlinedIcon className="!text-white !text-[20px]" />,
   },
   {
     title: "Panel Lawyer for Delhi Metro Rail Corporation",
     image: ach3,
-    icon: <TrainOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <TrainOutlinedIcon className="!text-white !text-[20px]" />,
   },
   {
     title: "Panel Lawyer for Union of India",
     image: ach4,
-    icon: <PublicOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <PublicOutlinedIcon className="!text-white !text-[20px]" />,
   },
   {
     title: "Ex-Panel Lawyer for New Delhi Municipal Corporation",
     image: ach5,
-    icon: <LocationCityOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <LocationCityOutlinedIcon className="!text-white !text-[20px]" />,
   },
   {
     title: "Top Member of DCD",
     image: ach6,
-    icon: <GroupsOutlinedIcon className="!text-white !text-[22px]" />,
+    icon: <GroupsOutlinedIcon className="!text-white !text-[20px]" />,
   },
 ];
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-16 md:py-28 overflow-hidden font-body">
+    <section className="relative py-16 md:py-24 overflow-hidden font-body">
       {/* BACKGROUND */}
       <div className="absolute inset-0">
         <img
@@ -343,29 +341,21 @@ export default function AchievementsSection() {
           alt="background"
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover opacity-90"
+          fetchPriority="low"
+          className="w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
-
-      {/* LIGHT GLOW */}
-      <div className="absolute top-[15%] left-[-120px] w-[180px] h-[180px] bg-secondary/10 rounded-full blur-xl" />
 
       {/* STATIC GAVEL */}
-      <div className="absolute top-[10%] right-[5%] opacity-[0.04] hidden xl:block">
-        <GavelOutlinedIcon className="!text-[180px] text-white" />
+      <div className="absolute top-[10%] right-[5%] opacity-[0.03] hidden xl:block">
+        <GavelOutlinedIcon className="!text-[160px] text-white" />
       </div>
 
-      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12">
+      <div className="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-6 md:px-10">
         {/* TITLE */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center max-w-[760px] mx-auto"
-        >
+        <div className="text-center max-w-[760px] mx-auto">
           <div className="flex items-center justify-center gap-2 text-secondary">
             <GavelOutlinedIcon className="!text-[18px]" />
 
@@ -374,40 +364,23 @@ export default function AchievementsSection() {
             </p>
           </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="font-heading text-white text-[28px] sm:text-[42px] md:text-[60px] font-bold mt-4 leading-tight sm:leading-none"
-          >
+          <h2 className="font-heading text-white text-[28px] sm:text-[42px] md:text-[56px] font-bold mt-4 leading-tight sm:leading-none">
             Our Achievements
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            viewport={{ once: true }}
-            className="text-gray-300 text-[14px] sm:text-[15px] md:text-[18px] leading-7 sm:leading-8 mt-5 sm:mt-6 font-body"
-          >
+          <p className="text-gray-300 text-[14px] sm:text-[15px] md:text-[17px] leading-7 sm:leading-8 mt-5 sm:mt-6 font-body">
             A legacy of trust, dedication, and excellence in delivering
             outstanding legal representation.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* SLIDER */}
         <div className="mt-12 md:mt-16">
           <Swiper
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation]}
             navigation
-            autoplay={{
-              delay: 4500,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            speed={500}
-            spaceBetween={24}
+            speed={350}
+            spaceBetween={20}
             breakpoints={{
               0: { slidesPerView: 1.05 },
               640: { slidesPerView: 2 },
@@ -418,41 +391,33 @@ export default function AchievementsSection() {
           >
             {achievements.map((item, index) => (
               <SwiperSlide key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
-                  }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-[22px] overflow-hidden shadow-xl group relative transition-all duration-300 hover:-translate-y-1 transform-gpu"
-                >
+                <div className="bg-white rounded-[20px] overflow-hidden relative shadow-md">
                   {/* IMAGE */}
-                  <div className="relative overflow-hidden h-[160px] sm:h-[190px] md:h-[210px]">
+                  <div className="relative overflow-hidden h-[150px] sm:h-[180px] md:h-[190px]">
                     <img
                       loading="lazy"
                       decoding="async"
+                      fetchPriority="low"
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
 
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-black/20" />
                   </div>
 
                   {/* CONTENT */}
-                  <div className="relative px-5 sm:px-6 pt-10 sm:pt-12 pb-6 sm:pb-7 text-center">
+                  <div className="relative px-5 sm:px-6 pt-10 sm:pt-11 pb-6 text-center">
                     {/* ICON */}
-                    <div className="absolute -top-7 sm:-top-8 left-1/2 -translate-x-1/2 w-14 sm:w-16 h-14 sm:h-16 rounded-full bg-secondary flex items-center justify-center border-[5px] border-white shadow-lg">
+                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-secondary flex items-center justify-center border-[4px] border-white">
                       {item.icon}
                     </div>
 
-                    <h3 className="text-primary font-heading font-bold leading-snug text-[18px] sm:text-[21px] min-h-[70px] sm:min-h-[90px]">
+                    <h3 className="text-primary font-heading font-bold leading-snug text-[17px] sm:text-[20px] min-h-[70px] sm:min-h-[85px]">
                       {item.title}
                     </h3>
                   </div>
-                </motion.div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
