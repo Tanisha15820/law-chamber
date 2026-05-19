@@ -100,20 +100,20 @@ export default function AboutSection() {
                   <div className="flex -space-x-2">
                     <img
                       src="https://i.pravatar.cc/40?img=12"
-                      className="w-7 h-7 rounded-full border-2 border-white"
+                      className="w-6 h-6 rounded-full border-2 border-white"
                     />
                     <img
                       src="https://i.pravatar.cc/40?img=15"
-                      className="w-7 h-7 rounded-full border-2 border-white"
+                      className="w-6 h-6 rounded-full border-2 border-white"
                     />
                     <img
                       src="https://i.pravatar.cc/40?img=18"
-                      className="w-7 h-7 rounded-full border-2 border-white"
+                      className="w-6 h-6 rounded-full border-2 border-white"
                     />
                   </div>
 
-                  <p className="font-body text-[10px] text-gray-500 leading-4">
-                    Trusted by our customers
+                  <p className="font-body text-[9px] text-gray-500 leading-4">
+                    Trusted by our students and faculties
                   </p>
 
                 </div>

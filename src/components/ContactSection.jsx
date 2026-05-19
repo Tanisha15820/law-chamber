@@ -23,10 +23,10 @@ export default function ContactSection() {
     const formData = new FormData(event.target);
 
     // WEB3FORMS ACCESS KEY
-    formData.append(
-      "access_key",
-      "e64ee34d-5f0e-409f-9298-e136b5634420"
-    );
+   formData.append(
+  "access_key",
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -282,13 +282,11 @@ export default function ContactSection() {
                   </motion.div>
 
                   <div>
-                    <h4 className="text-[#111] text-[15px] font-semibold leading-8 break-all">
-                      rkglawchamber@gmail.com
+                    <h4 className="text-[#111] text-[14px] font-semibold leading-8 break-all">
+                       info@rkglawchambers.com
                     </h4>
 
-                    <h4 className="text-[#111] text-[15px] font-semibold leading-8 break-all">
-                      contact@rkglaw.com
-                    </h4>
+                    
                   </div>
                 </motion.div>
               </div>
@@ -316,8 +314,7 @@ export default function ContactSection() {
 
                 <div>
                   <h4 className="text-[#111] text-[16px] font-semibold leading-8">
-                    RKG Law Chamber, Connaught Place,
-                    New Delhi, India
+                    G-60, basement, East of Kailash, Delhi-110065
                   </h4>
                 </div>
               </motion.div>

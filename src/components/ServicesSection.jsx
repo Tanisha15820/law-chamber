@@ -1,7 +1,11 @@
+
+
+
+
 // src/components/ServicesSection.jsx
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
@@ -58,9 +62,13 @@ const extraServices = [
 export default function ServicesSection() {
   const [showExtra, setShowExtra] = useState(false);
 
-  return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden font-body">
+  const extraServicesRef = useRef(null);
 
+  return (
+    <section
+      id="services"
+      className="relative bg-[#f8f8f8] py-16 md:py-24 overflow-hidden font-body"
+    >
       {/* BACKGROUND GLOW */}
       <motion.div
         animate={{
@@ -92,9 +100,7 @@ export default function ServicesSection() {
       </motion.div>
 
       <div className="max-w-[1450px] mx-auto px-4 sm:px-6 md:px-14 relative z-10">
-
         <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-16 items-start">
-
           {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -103,7 +109,6 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="lg:sticky lg:top-28"
           >
-
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -146,20 +151,35 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               className="text-[#555] text-[14px] sm:text-[16px] leading-7 sm:leading-8 mt-4 sm:mt-6 max-w-[360px] font-body"
             >
-              Our experienced legal team provides trusted legal solutions with professionalism, strategy, and dedication for every client.
+              Our experienced legal team provides trusted legal solutions with
+              professionalism, strategy, and dedication for every client.
             </motion.p>
 
             {/* BUTTON */}
             <motion.button
-              onClick={() => setShowExtra((prev) => !prev)}
+             data-services-button="true"
+              onClick={() => {
+                if (!showExtra) {
+                  setShowExtra(true);
+
+                  setTimeout(() => {
+                    extraServicesRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }, 200);
+                } else {
+                  setShowExtra(false);
+                }
+              }}
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "#111",
               }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 sm:mt-10 w-full sm:w-auto bg-secondary transition-all duration-300 text-white px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center sm:justify-start gap-3 text-[14px] sm:text-[15px] font-medium"
+              className="mt-8 sm:mt-10 w-full sm:w-auto bg-secondary transition-all duration-300 text-white px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center sm:justify-start gap-3 text-[14px] sm:text-[15px] font-medium rounded-lg"
             >
-              {showExtra ? "Hide Services" : "Explore More"}
+              {showExtra ? "Hide Services" : "Explore More Services"}
 
               <motion.span
                 animate={{
@@ -174,12 +194,10 @@ export default function ServicesSection() {
                 <ArrowForwardRoundedIcon className="!text-[16px]" />
               </motion.span>
             </motion.button>
-
           </motion.div>
 
           {/* RIGHT SIDE */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-
             {/* DEFAULT SERVICES */}
             {services.map((item, index) => (
               <motion.div
@@ -194,11 +212,10 @@ export default function ServicesSection() {
                 whileHover={{
                   y: -4,
                 }}
-                className={`bg-white border border-transparent hover:border-secondary/30 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden relative group ${
+                className={`bg-white border border-transparent hover:border-secondary/30 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden relative group rounded-2xl ${
                   index % 2 !== 0 ? "md:mt-20" : ""
                 }`}
               >
-
                 {/* FLOATING GRADIENT */}
                 <motion.div
                   animate={{
@@ -216,7 +233,6 @@ export default function ServicesSection() {
 
                 {/* TOP */}
                 <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
-
                   <motion.div
                     animate={{
                       rotate: [0, 8, -8, 0],
@@ -226,7 +242,7 @@ export default function ServicesSection() {
                       repeat: Infinity,
                       delay: index * 0.2,
                     }}
-                    className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2"
+                    className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md"
                   >
                     <span className="text-[#111] text-[14px] sm:text-[16px] font-bold">
                       {item.number}
@@ -260,89 +276,97 @@ export default function ServicesSection() {
                     {item.desc}
                   </p>
                 </div>
-
               </motion.div>
             ))}
 
             {/* EXTRA SERVICES */}
             <AnimatePresence>
-              {showExtra &&
-                extraServices.map((item, index) => (
-                  <motion.div
-                    key={item.number}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5 }}
-                    whileHover={{
-                      y: -4,
-                    }}
-                    className="bg-white border border-transparent hover:border-secondary/30 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden relative group"
-                  >
+              {showExtra && (
+                <>
+                  <div
+                    ref={extraServicesRef}
+                    className="col-span-1 md:col-span-2 h-[1px]"
+                  ></div>
 
-                    {/* FLOATING GRADIENT */}
+                  {extraServices.map((item, index) => (
                     <motion.div
-                      animate={{
-                        y: [0, -20, 0],
-                        opacity: [0.08, 0.16, 0.08],
+                      key={item.number}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5 }}
+                      whileHover={{
+                        y: -4,
                       }}
-                      transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.3,
-                      }}
-                      className="absolute top-[-80px] right-[-60px] w-[180px] h-[180px] rounded-full bg-secondary blur-[70px]"
-                    />
-
-                    <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
-
+                      className={`bg-white border border-transparent hover:border-secondary/30 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all duration-500 overflow-hidden relative group rounded-2xl ${
+                        index === 1 ? "md:mt-20" : ""
+                      }`}
+                    >
+                      {/* FLOATING GRADIENT */}
                       <motion.div
                         animate={{
-                          rotate: [0, 8, -8, 0],
+                          y: [0, -20, 0],
+                          opacity: [0.08, 0.16, 0.08],
                         }}
                         transition={{
-                          duration: 4,
+                          duration: 5,
                           repeat: Infinity,
+                          ease: "easeInOut",
                           delay: index * 0.3,
                         }}
-                        className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2"
-                      >
-                        <span className="text-[#111] text-[14px] sm:text-[16px] font-bold">
-                          {item.number}
-                        </span>
-                      </motion.div>
-
-                      <h3 className="text-[#111] text-[20px] sm:text-[30px] font-heading font-bold leading-none">
-                        {item.title}
-                      </h3>
-                    </div>
-
-                    <div className="overflow-hidden h-[180px] sm:h-[250px]">
-                      <motion.img
-                        whileHover={{
-                          scale: 1.06,
-                        }}
-                        transition={{
-                          duration: 0.6,
-                          ease: "easeOut",
-                        }}
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
+                        className="absolute top-[-80px] right-[-60px] w-[180px] h-[180px] rounded-full bg-secondary blur-[70px]"
                       />
-                    </div>
 
-                    <div className="px-5 sm:px-6 py-5 sm:py-6 relative z-10">
-                      <p className="text-[#555] leading-7 sm:leading-8 text-[14px] sm:text-[15px] font-body">
-                        {item.desc}
-                      </p>
-                    </div>
+                      {/* TOP */}
+                      <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
+                        <motion.div
+                          animate={{
+                            rotate: [0, 8, -8, 0],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            delay: index * 0.2,
+                          }}
+                          className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md"
+                        >
+                          <span className="text-[#111] text-[14px] sm:text-[16px] font-bold">
+                            {item.number}
+                          </span>
+                        </motion.div>
 
-                  </motion.div>
-                ))}
+                        <h3 className="text-[#111] text-[20px] sm:text-[30px] font-heading font-bold leading-none">
+                          {item.title}
+                        </h3>
+                      </div>
+
+                      {/* IMAGE */}
+                      <div className="overflow-hidden h-[180px] sm:h-[250px]">
+                        <motion.img
+                          whileHover={{
+                            scale: 1.06,
+                          }}
+                          transition={{
+                            duration: 0.6,
+                            ease: "easeOut",
+                          }}
+                          src={item.img}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* CONTENT */}
+                      <div className="px-5 sm:px-6 py-5 sm:py-6 relative z-10">
+                        <p className="text-[#555] leading-7 sm:leading-8 text-[14px] sm:text-[15px] font-body">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </>
+              )}
             </AnimatePresence>
-
           </div>
         </div>
       </div>

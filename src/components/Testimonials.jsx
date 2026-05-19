@@ -12,7 +12,7 @@ import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 
-import clientImg from "../assets/about-top.jpeg";
+// import clientImg from "../assets/about-top.jpeg";
 
 const testimonialImg =
   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop";
@@ -23,7 +23,8 @@ const testimonials = [
     role: "Founder of ABC Co.",
     review:
       "They guided me through a difficult legal matter with professionalism and consistent support.",
-    image: clientImg,
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
   },
 
   {
@@ -31,7 +32,8 @@ const testimonials = [
     role: "Business Owner",
     review:
       "Exceptional legal expertise and transparent communication throughout the process.",
-    image: clientImg,
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
   },
 
   {
@@ -39,13 +41,14 @@ const testimonials = [
     role: "Entrepreneur",
     review:
       "Their team handled my case with dedication and achieved the best possible outcome.",
-    image: clientImg,
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-[#f8f8f8] overflow-hidden">
 
       {/* FLOATING BG ICON */}
       <motion.div

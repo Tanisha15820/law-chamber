@@ -231,102 +231,137 @@ export default function Footer() {
           </motion.div>
 
           {/* QUICK LINKS */}
-          <motion.div
-            initial={{ opacity: 0, y: 70 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="lg:border-l lg:border-white/10 lg:pl-12"
-          >
+          {/* QUICK LINKS */}
+<motion.div
+  initial={{ opacity: 0, y: 70 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, delay: 0.1 }}
+  viewport={{ once: true }}
+  className="lg:border-l lg:border-white/10 lg:pl-12"
+>
 
-            <h3 className="text-white text-[26px] font-serif font-bold mb-6">
-              Quick Links
-            </h3>
+  <h3 className="text-white text-[26px] font-serif font-bold mb-6">
+    Quick Links
+  </h3>
 
-            <ul className="space-y-4">
+  <ul className="space-y-4">
 
-              {[
-                "Home",
-                "About Us",
-                "Testimonials",
-                "Practice Areas",
-                "Services",
-                "Contact Us",
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{
-                    x: 10,
-                  }}
-                  initial={{ opacity: 0, x: -25 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    delay: index * 0.08,
-                    duration: 0.5,
-                  }}
-                  viewport={{ once: true }}
-                  className="
-                    text-gray-300
-                    hover:text-secondary
-                    transition-all duration-300
-                    cursor-pointer
-                    text-[15px]
-                  "
-                >
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+    {[
+      { name: "Home", id: "home" },
+      { name: "About Us", id: "about" },
+      { name: "Practice Areas", id: "practice" },
+      { name: "Achievements", id: "achievements" },
+      { name: "Services", id: "services" },
+      { name: "Testimonials", id: "clients" },
+      { name: "Contact Us", id: "contact" },
+    ].map((item, index) => (
+      <motion.li
+        key={index}
+        whileHover={{
+          x: 10,
+        }}
+        initial={{ opacity: 0, x: -25 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: index * 0.08,
+          duration: 0.5,
+        }}
+        viewport={{ once: true }}
+        onClick={() => {
+          const section = document.getElementById(item.id);
+
+          if (section) {
+            section.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        }}
+        className="
+          text-gray-300
+          hover:text-secondary
+          transition-all duration-300
+          cursor-pointer
+          text-[15px]
+        "
+      >
+        {item.name}
+      </motion.li>
+    ))}
+  </ul>
+</motion.div>
 
           {/* SERVICES */}
-          <motion.div
-            initial={{ opacity: 0, y: 70 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="lg:border-l lg:border-white/10 lg:pl-12"
-          >
+          {/* SERVICES */}
+<motion.div
+  initial={{ opacity: 0, y: 70 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, delay: 0.2 }}
+  viewport={{ once: true }}
+  className="lg:border-l lg:border-white/10 lg:pl-12"
+>
 
-            <h3 className="text-white text-[26px] font-serif font-bold mb-6">
-              Our Services
-            </h3>
+  <h3 className="text-white text-[26px] font-serif font-bold mb-6">
+    Our Services
+  </h3>
 
-            <ul className="space-y-4">
+  <ul className="space-y-4">
 
-              {[
-                "Corporate Law",
-                "Criminal Law",
-                "Family Law",
-                "Property Law",
-                "Business Law",
-                "Immigration Law",
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{
-                    x: 10,
-                  }}
-                  initial={{ opacity: 0, x: -25 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    delay: index * 0.08,
-                    duration: 0.5,
-                  }}
-                  viewport={{ once: true }}
-                  className="
-                    text-gray-300
-                    hover:text-secondary
-                    transition-all duration-300
-                    cursor-pointer
-                    text-[15px]
-                  "
-                >
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+    {[
+      "Corporate Law",
+      "Criminal Law",
+      "Family Law",
+      "Property Law",
+      "Business Law",
+      "Immigration Law",
+    ].map((item, index) => (
+      <motion.li
+        key={index}
+        whileHover={{
+          x: 10,
+        }}
+        initial={{ opacity: 0, x: -25 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          delay: index * 0.08,
+          duration: 0.5,
+        }}
+        viewport={{ once: true }}
+        onClick={() => {
+          const section = document.getElementById("services");
+
+          if (section) {
+            section.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+
+          // OPEN EXTRA SERVICES
+          const btn = document.querySelector(
+            '[data-services-button="true"]'
+          );
+
+          if (
+            (item === "Business Law" ||
+              item === "Immigration Law") &&
+            btn?.innerText?.includes("Explore")
+          ) {
+            btn.click();
+          }
+        }}
+        className="
+          text-gray-300
+          hover:text-secondary
+          transition-all duration-300
+          cursor-pointer
+          text-[15px]
+        "
+      >
+        {item}
+      </motion.li>
+    ))}
+  </ul>
+</motion.div>
 
         </div>
 
@@ -351,9 +386,6 @@ export default function Footer() {
             © 2026 RKG Law Chamber. All Rights Reserved.
           </p>
 
-          <p className="text-gray-400 text-[14px] text-center md:text-right">
-            Designed with professionalism & trust for legal excellence.
-          </p>
         </motion.div>
       </div>
     </footer>
