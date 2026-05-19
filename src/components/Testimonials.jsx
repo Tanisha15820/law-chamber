@@ -45,7 +45,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-16 md:py-24 bg-[#faf8f4] overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
 
       {/* FLOATING BG ICON */}
       <motion.div

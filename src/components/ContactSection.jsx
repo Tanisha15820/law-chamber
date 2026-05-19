@@ -51,7 +51,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative bg-[#f7f7f7] py-24 overflow-hidden">
+    <section className="relative bg-white py-24 overflow-hidden">
 
       {/* FLOATING GLOW */}
       <motion.div
