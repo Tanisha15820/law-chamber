@@ -273,13 +273,13 @@
 
 
 
+
+
+
 // src/components/AchievementsSection.jsx
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
 
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
@@ -342,6 +342,8 @@ export default function AchievementsSection() {
           loading="lazy"
           decoding="async"
           fetchPriority="low"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
 
@@ -398,6 +400,8 @@ export default function AchievementsSection() {
                       loading="lazy"
                       decoding="async"
                       fetchPriority="low"
+                      width={400}
+                      height={190}
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover"

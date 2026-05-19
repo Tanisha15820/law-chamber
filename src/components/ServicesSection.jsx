@@ -525,6 +525,8 @@ export default function ServicesSection() {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
+                    width={700}
+                    height={190}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -538,56 +540,54 @@ export default function ServicesSection() {
               </div>
             ))}
 
-            {/* EXTRA SERVICES */}
-            {showExtra && (
-              <>
-                <div
-                  ref={extraServicesRef}
-                  className="col-span-1 md:col-span-2 h-[1px]"
-                ></div>
+            {/* EXTRA SERVICES — hidden instead of unmounted, taaki images preload ho sakein */}
+            <div
+              ref={extraServicesRef}
+              className={`col-span-1 md:col-span-2 h-[1px] ${showExtra ? "block" : "hidden"}`}
+            />
 
-                {extraServices.map((item, index) => (
-                  <div
-                    key={item.number}
-                    className={`bg-white border border-transparent overflow-hidden relative rounded-2xl shadow-md ${
-                      index === 1 ? "md:mt-20" : ""
-                    }`}
-                  >
-                    {/* TOP */}
-                    <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
-                      <div className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md">
-                        <span className="text-[#111] text-[14px] sm:text-[16px] font-bold">
-                          {item.number}
-                        </span>
-                      </div>
-
-                      <h3 className="text-[#111] text-[20px] sm:text-[30px] font-heading font-bold leading-none">
-                        {item.title}
-                      </h3>
-                    </div>
-
-                    {/* IMAGE */}
-                    <div className="overflow-hidden h-[160px] sm:h-[190px]">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        loading="lazy"
-                        decoding="async"
-                        fetchPriority="low"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="px-5 sm:px-6 py-5 sm:py-6 relative z-10">
-                      <p className="text-[#555] leading-7 sm:leading-8 text-[14px] sm:text-[15px] font-body">
-                        {item.desc}
-                      </p>
-                    </div>
+            {extraServices.map((item, index) => (
+              <div
+                key={item.number}
+                className={`bg-white border border-transparent overflow-hidden relative rounded-2xl shadow-md ${
+                  index === 1 ? "md:mt-20" : ""
+                } ${showExtra ? "block" : "hidden"}`}
+              >
+                {/* TOP */}
+                <div className="flex items-center gap-3 sm:gap-4 px-5 sm:px-6 pt-5 sm:pt-6 pb-3 sm:pb-4 relative z-10">
+                  <div className="bg-[#eef4f4] px-2 sm:px-3 py-1 sm:py-2 rounded-md">
+                    <span className="text-[#111] text-[14px] sm:text-[16px] font-bold">
+                      {item.number}
+                    </span>
                   </div>
-                ))}
-              </>
-            )}
+
+                  <h3 className="text-[#111] text-[20px] sm:text-[30px] font-heading font-bold leading-none">
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* IMAGE */}
+                <div className="overflow-hidden h-[160px] sm:h-[190px]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    width={700}
+                    height={190}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* CONTENT */}
+                <div className="px-5 sm:px-6 py-5 sm:py-6 relative z-10">
+                  <p className="text-[#555] leading-7 sm:leading-8 text-[14px] sm:text-[15px] font-body">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
