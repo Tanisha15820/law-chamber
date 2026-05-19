@@ -3,7 +3,7 @@ import { useState } from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-final.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -233,26 +233,32 @@ export default function Header() {
             </ul>
 
             {/* MOBILE BUTTON */}
-            <button
-              onClick={() => {
-                scrollToSection("contact");
-                setMenuOpen(false);
-              }}
-              className="
-                w-full
-                mt-6
-                bg-secondary
-                text-primary
-                hover:bg-light
-                duration-300
-                px-6
-                py-3
-                rounded-xl
-                font-semibold
-              "
-            >
-              Book Consultation
-            </button>
+            {/* MOBILE BUTTON */}
+<button
+  onClick={() => {
+    window.open("https://wa.me/919999999999", "_blank");
+    setMenuOpen(false);
+  }}
+  className="
+    w-full
+    mt-6
+    bg-[#25D366]
+    hover:bg-[#1ebe5d]
+    text-white
+    duration-300
+    px-6
+    py-3
+    rounded-xl
+    font-semibold
+    flex
+    items-center
+    justify-center
+    gap-2
+  "
+>
+  <WhatsAppIcon className="!text-[20px]" />
+  Talk To Us
+</button>
 
           </div>
 

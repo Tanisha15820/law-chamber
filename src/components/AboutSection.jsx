@@ -113,7 +113,7 @@ export default function AboutSection() {
                   </div>
 
                   <p className="font-body text-[9px] text-gray-500 leading-4">
-                    Trusted by our students and faculties
+                    Trusted by our students and Indian faculties
                   </p>
 
                 </div>
