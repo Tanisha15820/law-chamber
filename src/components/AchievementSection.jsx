@@ -291,12 +291,12 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 
 import lawBg from "../assets/law-bg.webp";
 
-import ach1 from "../assets/ach-1.webp";
-import ach2 from "../assets/ach-2.webp";
-import ach3 from "../assets/ach-3.webp";
-import ach4 from "../assets/ach-4.webp";
-import ach5 from "../assets/ach-5.webp";
-import ach6 from "../assets/ach-6.webp";
+import ach1 from "../assets/ach-1 (2).webp";
+import ach2 from "../assets/ach-2 (1).webp";
+import ach3 from "../assets/ach-3 (1).webp";
+import ach4 from "../assets/ach-4 (1).webp";
+import ach5 from "../assets/ach-5 (1).webp";
+import ach6 from "../assets/ach-6 (1).webp";
 
 const achievements = [
   {
