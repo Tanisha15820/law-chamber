@@ -409,9 +409,8 @@ export default function Footer() {
     <footer className="relative bg-black overflow-hidden">
 
       {/* TOP HEADING */}
-      <div className="relative border-b border-white/10 overflow-hidden">
+      {/* <div className="relative border-b border-white/10 overflow-hidden">
 
-        {/* BG IMAGE */}
         <div
           className="
             absolute inset-0
@@ -424,14 +423,12 @@ export default function Footer() {
           }}
         ></div>
 
-        {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-black/65"></div>
 
         <div className="relative z-10 max-w-[1450px] mx-auto px-5 sm:px-8 md:px-14 py-12">
 
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
-            {/* LEFT */}
             <div>
 
               <h2
@@ -450,7 +447,6 @@ export default function Footer() {
 
             </div>
 
-            {/* RIGHT TEXT */}
             <p className="text-gray-300 text-[14px] leading-8 max-w-[350px]">
               Trusted legal guidance and professional representation
               tailored to protect your rights, business, and future.
@@ -459,7 +455,7 @@ export default function Footer() {
           </div>
 
         </div>
-      </div>
+      </div> */}
 
       {/* MAIN FOOTER */}
       <div className="relative z-10 max-w-[1450px] mx-auto px-5 sm:px-8 md:px-14 py-16">

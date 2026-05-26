@@ -13,36 +13,43 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 
 // import clientImg from "../assets/about-top.jpeg";
+import testimonialImg from "../assets/testimonial-img.avif";
+import RajeshImg from "../assets/rajesh-sharma.avif";
+import PriyaImg from "../assets/priya-mehta.avif";
+import AmitImg from "../assets/amit-verma.avif";
 
-const testimonialImg =
-  "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop";
+// const testimonialImg =
+//   "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop";
 
 const testimonials = [
   {
-    name: "David Anderson",
-    role: "Founder of ABC Co.",
-    review:
-      "They guided me through a difficult legal matter with professionalism and consistent support.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
-  },
-
-  {
-    name: "Sophia Miller",
+    name: "Rajesh Sharma",
     role: "Business Owner",
     review:
-      "Exceptional legal expertise and transparent communication throughout the process.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+      "They guided me through a difficult legal matter with professionalism and consistent support.",
+    // image:
+    //   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    image: RajeshImg
   },
 
   {
-    name: "Michael Brown",
+    name: "Priya Mehta",
     role: "Entrepreneur",
     review:
+      "Exceptional legal expertise and transparent communication throughout the process.",
+    //  image:
+    //   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    image: PriyaImg
+  },
+
+  {
+    name: "Amit Verma",
+    role: "Startup Founder",
+    review:
       "Their team handled my case with dedication and achieved the best possible outcome.",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+    // image:
+    //   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+    image: AmitImg
   },
 ];
 
