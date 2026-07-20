@@ -8,8 +8,8 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import criminalImg from "../assets/criminal.webp";
 import familyImg from "../assets/family.webp";
-import corporateImg from "../assets/corporate.webp";
-import propertyImg from "../assets/property.webp";
+import corporateImg from "../assets/corporate-law.jpeg";
+import propertyImg from "../assets/Property-law.jpeg";
 import businessImg from "../assets/business.webp";
 import immigrationImg from "../assets/immigration.webp";
 

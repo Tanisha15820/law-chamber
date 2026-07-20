@@ -119,7 +119,7 @@ export default function Header() {
 
 <button
   onClick={() =>
-    window.open("https://wa.me/919999999999", "_blank")
+    window.open("https://wa.me/919811052524", "_blank")
   }
   className="
     flex
@@ -233,27 +233,20 @@ export default function Header() {
             </ul>
 
             {/* MOBILE BUTTON */}
-            {/* MOBILE BUTTON */}
 <button
-  onClick={() => {
-    window.open("https://wa.me/919999999999", "_blank");
-    setMenuOpen(false);
-  }}
-  className="
-    w-full
-    mt-6
-    bg-[#25D366]
-    hover:bg-[#1ebe5d]
-    text-white
-    duration-300
+  onClick={() =>
+    window.open(
+      "https://wa.me/919811052524",
+      "_blank"
+    )
+  }
+  className="flex items-center gap-2 bg-[#25D366]hover:bg-[#1ebe5d] text-white duration-300
     px-6
     py-3
     rounded-xl
     font-semibold
-    flex
-    items-center
-    justify-center
-    gap-2
+    text-[15px]
+    shadow-xl
   "
 >
   <WhatsAppIcon className="!text-[20px]" />
@@ -261,11 +254,8 @@ export default function Header() {
 </button>
 
           </div>
-
         </div>
-
       </div>
-
     </header>
   );
 }
