@@ -26,30 +26,40 @@ const testimonials = [
     name: "Rajesh Sharma",
     role: "Business Owner",
     review:
-      "They guided me through a difficult legal matter with professionalism and consistent support.",
-    // image:
-    //   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
-    image: RajeshImg
+      "When considering legal representation, I highly recommend them. They have demonstrated remarkable proficiency in handling a variety of legal matters. One of the firm's strengths is its client-centric approach. From the initial consultation to case resolution, the team demonstrates attentiveness and a genuine commitment to understanding client concerns. Communication is prompt, and the legal advice is clear and actionable, making complex legal processes manageable for clients.",
+    image: RajeshImg,
   },
 
   {
     name: "Priya Mehta",
     role: "Entrepreneur",
     review:
-      "Exceptional legal expertise and transparent communication throughout the process.",
-    //  image:
-    //   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
-    image: PriyaImg
+      "From the start, they were very straightforward about the possible outcomes and always seemed to be one step ahead in planning our defense strategy. The paralegal staff was also courteous and prompt in their responses, which made the whole stressful process much more bearable. Their proactive communication and ability to handle complex legal scenarios effectively have been a significant asset. Highly recommended.",
+    image: PriyaImg,
   },
 
   {
     name: "Amit Verma",
     role: "Startup Founder",
     review:
-      "Their team handled my case with dedication and achieved the best possible outcome.",
-    // image:
-    //   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
-    image: AmitImg
+      "They provided exceptional service with professionalism and expertise. The team was responsive, attentive, and made the legal process easy to understand. I felt well-supported and confident in their guidance. Highly recommend them for anyone needing reliable legal assistance.",
+    image: AmitImg,
+  },
+
+  {
+    name: "Rajesh Sharma",
+    role: "Business Owner",
+    review:
+      "Rohit Gupta is a highly professional and knowledgeable lawyer, always ethical and transparent in his engagements, with the best interests of his clients always at heart. He has represented me and worked on my legal matters with sincerity and clarity for many years now. My best wishes for his continued success in his profession and life.",
+    image: RajeshImg,
+  },
+
+  {
+    name: "Priya Mehta",
+    role: "Entrepreneur",
+    review:
+      "Rohit Gupta Ji is a gem person and their team fully supported us. They have in-depth knowledge and a thorough understanding of their subject. Their expertise in law matters is unparalleled, along with swift resolution. Highly recommend them for their top-notch service. All the best!",
+    image: PriyaImg,
   },
 ];
 
@@ -86,9 +96,7 @@ export default function Testimonials() {
         }}
         className="absolute bottom-[-120px] left-[-120px] w-[320px] h-[320px] bg-secondary rounded-full blur-[120px]"
       />
-
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-14">
-
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
@@ -131,7 +139,6 @@ export default function Testimonials() {
               integrity and dedication.
             </motion.p>
 
-            {/* BUTTON */}
            {/* BUTTON */}
 <motion.button
   whileHover={{
@@ -263,14 +270,17 @@ export default function Testimonials() {
                         whileHover={{
                           y: -4,
                         }}
-                        className="
-                          bg-white
-                          p-6
-                          rounded-2xl
-                          shadow-[0_15px_45px_rgba(0,0,0,0.12)]
-                          border border-gray-100
-                          relative overflow-hidden
-                        "
+                       className="
+  bg-white
+  h-[420px]
+  p-6
+  rounded-2xl
+  shadow-[0_15px_45px_rgba(0,0,0,0.12)]
+  border border-gray-100
+  relative
+  flex
+  flex-col
+"
                       >
 
                         {/* FLOATING LIGHT */}
@@ -314,9 +324,14 @@ export default function Testimonials() {
                         </div>
 
                         {/* REVIEW */}
-                        <p className="text-gray-600 leading-7 text-[15px] mt-5 relative z-10">
+                        {/* <p className="text-gray-600 leading-7 text-[15px] mt-5 relative z-10">
                           {item.review}
-                        </p>
+                        </p> */}
+                        <div className="mt-5 flex-1 overflow-y-auto pr-2">
+  <p className="text-gray-600 leading-7 text-[15px]">
+    {item.review}
+  </p>
+</div>
 
                         {/* CLIENT */}
                         <div className="flex items-center gap-4 mt-6 relative z-10">

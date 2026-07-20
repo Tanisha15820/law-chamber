@@ -397,10 +397,8 @@
 
 import GavelOutlinedIcon from "@mui/icons-material/GavelOutlined";
 
-import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import TelegramIcon from "@mui/icons-material/Telegram";
 
 import logo from "../assets/logo-final.png";
 
@@ -492,29 +490,36 @@ export default function Footer() {
             {/* SOCIALS */}
             <div className="flex items-center gap-4 mt-8">
 
-              {[
-                <XIcon />,
-                <InstagramIcon />,
-                <YouTubeIcon />,
-                <TelegramIcon />,
-              ].map((icon, index) => (
-                <div
-                  key={index}
-                  className="
-                    w-12 h-12
-                    bg-white
-                    hover:bg-secondary
-                    hover:text-white
-                    transition-all duration-300
-                    rounded-xl
-                    flex items-center justify-center
-                    text-[#111]
-                    cursor-pointer
-                  "
-                >
-                  {icon}
-                </div>
-              ))}
+             {[
+  {
+    icon: <InstagramIcon />,
+    link: "https://www.instagram.com/rkglawchambers/",
+  },
+  {
+    icon: <YouTubeIcon />,
+    link: "https://www.youtube.com/@rkglawchambers",
+  },
+].map((item, index) => (
+  <a
+    key={index}
+    href={item.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      w-12 h-12
+      bg-white
+      hover:bg-secondary
+      hover:text-white
+      transition-all duration-300
+      rounded-xl
+      flex items-center justify-center
+      text-[#111]
+      cursor-pointer
+    "
+  >
+    {item.icon}
+  </a>
+))}
 
             </div>
           </div>
