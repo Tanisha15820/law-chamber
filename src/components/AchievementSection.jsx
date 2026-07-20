@@ -52,7 +52,7 @@ const achievements = [
     icon: <LocationCityOutlinedIcon className="!text-white !text-[22px]" />,
   },
   {
-    title: "Top Member of DCD",
+    title: "Co-OPT Member of Delhi Bar Council",
     image: ach6,
     icon: <GroupsOutlinedIcon className="!text-white !text-[22px]" />,
   },

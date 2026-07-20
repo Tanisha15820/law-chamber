@@ -3,7 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-import aboutMain from "../assets/about-top.jpeg";
+// import aboutMain from "../assets/about-top.jpeg";
+import aboutImg from "../assets/about-img.jpeg";
 import aboutSmall from "../assets/about-mini.jpeg";
 
 export default function AboutSection() {
@@ -62,7 +63,7 @@ export default function AboutSection() {
                 className="overflow-hidden rounded-[26px] shadow-[0_25px_60px_rgba(0,0,0,0.12)]"
               >
                 <motion.img
-                  src={aboutMain}
+                  src={aboutImg}
                   alt="lawyer"
                   initial={{ scale: 1.1 }}
                   whileInView={{ scale: 1 }}
@@ -178,7 +179,7 @@ export default function AboutSection() {
             <div className="mt-9 space-y-5">
 
               {[
-                "Experienced attorneys with a client-first mindset",
+                "Experienced lawyers with a solution-oriented mindset",
                 "Clear communication and honest legal advice",
                 "Strategic approach tailored to every case",
               ].map((item, index) => (

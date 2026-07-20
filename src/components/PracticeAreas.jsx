@@ -770,7 +770,7 @@ const allPracticeAreas = [
     ),
   },
   {
-    title: "Corporate & Commercial Law",
+    title: "Property Dispute",
     icon: (
       <BusinessCenterOutlinedIcon className="!text-white !text-[18px]" />
     ),
@@ -809,6 +809,30 @@ const allPracticeAreas = [
     title: "Cyber Law & Technology Law",
     icon: <PublicOutlinedIcon className="!text-white !text-[18px]" />,
   },
+  {
+  title: "Matrimonial & Divorce Matters",
+  icon: <FamilyRestroomOutlinedIcon className="!text-white !text-[18px]" />,
+},
+{
+  title: "Sexual Harassment Cases",
+  icon: <BalanceOutlinedIcon className="!text-white !text-[18px]" />,
+},
+{
+  title: "POSH Compliance & Advisory",
+  icon: <BusinessCenterOutlinedIcon className="!text-white !text-[18px]" />,
+},
+{
+  title: "Child Custody & Guardianship",
+  icon: <FamilyRestroomOutlinedIcon className="!text-white !text-[18px]" />,
+},
+{
+  title: "Cheque Bounce (NI Act)",
+  icon: <GavelOutlinedIcon className="!text-white !text-[18px]" />,
+},
+{
+  title: "Criminal Matters",
+  icon: <GavelOutlinedIcon className="!text-white !text-[18px]" />,
+},
 ];
 
 export default function PracticeAreas() {
